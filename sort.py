@@ -66,7 +66,7 @@ def main():
         print("Specified folder does not exist.")
         sys.exit(1)
 
-    process_folder("C:\Users\ASUS\Edyta\Do przejrzenia"h)
+    process_folder("C:\Users\ASUS\Edyta\Do przejrzenia")
 
 if __name__ == "__main__":
     main() 
