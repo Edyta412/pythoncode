@@ -1,0 +1,127 @@
++------------------------------------------+
+|                 AssistantBot             |
++------------------------------------------+
+| - notebook: Notebook                     |
+| - book: AddressBook                      |
+| - tag_manager: Tag                       |
++------------------------------------------+
+| + main(): void                           |
++------------------------------------------+
+
++------------------------------------------+
+|                 Notebook                 |
++------------------------------------------+
+| - notes: List[Note]                      |
++------------------------------------------+
+| + add_note(note_content: str): void      |
+| + show_notes(): void                     |
+| + delete_note(note_id: int): void        |
+| + save_notes(filename="notes.pkl"): void |
+| + load_notes(filename="notes.pkl"): void |
++------------------------------------------+
+
++------------------------------------------+
+|                    Tag                   |
++------------------------------------------+
+| - notes: Notebook                        |
++------------------------------------------+
+| + add_tag(note_index: int, tag: str): void|
+| + search_tag(tag: str): List[Note]       |
+| + sort_tags(): Dict[str, List[Note]]     |
++------------------------------------------+
+
++------------------------------------------+
+|                 AddressBook              |
++------------------------------------------+
+| - data: Dict[str, Record]                |
++------------------------------------------+
+| + add_record(record: Record): void       |
+| + show_all_records(): void               |
+| + find_record(search_term: str): List[Record] |
+| + upcoming_birthdays(days: int): void    |
+| + delete_record(name: str): void         |
+| + __iter__(): Iterator[List[Record]]     |
+| + __next__(): List[Record]               |
+| + find_by_birthday_range(days: int): List[Record] |
++------------------------------------------+
+
++------------------------------------------+
+|                    Record                |
++------------------------------------------+
+| - name: Name                             |
+| - phones: List[Phone]                    |
+| - emails: List[Email]                    |
+| - birthday: Birthday                     |
+| - address: Address                       |
+| - notes: List[str]                       |
++------------------------------------------+
+| + add_phone(phone: Phone): void          |
+| + remove_phone(phone: Phone): void       |
+| + edit_phone(old_phone: Phone,           |
+|              new_phone: Phone): void     |
+| + add_email(email: Email): void          |
+| + remove_email(email: Email): void       |
+| + edit_email(old_email: Email,           |
+|              new_email: Email): void     |
+| + edit_name(new_name: Name): void        |
+| + days_to_birthday(): int                |
+| + edit_address(new_address: Address): void |
+| + add_note(note: str): void              |
+| + show_notes(): void                     |
++------------------------------------------+
+
++------------------------------------------+
+|                    Field                 |
++------------------------------------------+
+| - value: str                             |
++------------------------------------------+
+| + __init__(value: str): void             |
++------------------------------------------+
+
++------------------------------------------+
+|                    Name                  |
++------------------------------------------+
+|                                      <<inherit>>                                  |
+|                                      - value: str                                  |
++------------------------------------------+
+
++------------------------------------------+
+|                    Phone                 |
++------------------------------------------+
+|                                      <<inherit>>                                  |
+|                                      - value: str                                  |
++------------------------------------------+
+
++------------------------------------------+
+|                   Email                  |
++------------------------------------------+
+|                                      <<inherit>>                                  |
+|                                      - value: str                                  |
++------------------------------------------+
+
++------------------------------------------+
+|                  Birthday                |
++------------------------------------------+
+|                                      <<inherit>>                                  |
+|                                      - value: str                                  |
++------------------------------------------+
+
++------------------------------------------+
+|                  Address                 |
++------------------------------------------+
+|                                      <<inherit>>                                  |
+|                                      - value: str                                  |
++------------------------------------------+
+
++------------------------------------------+
+|                    Note                  |
++------------------------------------------+
+| - content: str                           |
+| - created_at: datetime                   |
+| - tags: List[str]                       |
++------------------------------------------+
+| + add_tag(tag: str): void               |
++------------------------------------------+
+
+
+
